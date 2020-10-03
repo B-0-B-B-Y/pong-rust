@@ -71,8 +71,8 @@ impl Paddle {
   fn new(side: Side) -> Paddle {
     Paddle {
       side,
-      height: PADDLE_HEIGHT,
       width: PADDLE_WIDTH,
+      height: PADDLE_HEIGHT
     }
   } 
 }
