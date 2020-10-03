@@ -4,7 +4,7 @@ use amethyst::{
     assets::{AssetStorage, Loader, Handle},
     core::transform::Transform,
     core::timing::Time,
-    ecs::{Component, DenseVecStorage},
+    ecs::{Component, DenseVecStorage, Entity},
     prelude::*,
     renderer::{Camera, ImageFormat, SpriteRender, SpriteSheet, SpriteSheetFormat, Texture},
 };
@@ -13,6 +13,17 @@ use amethyst::{
 pub struct Pong {
   ball_spawn_timer: Option<f32>,
   sprite_sheet_handle: Option<Handle<SpriteSheet>>,
+}
+
+#[derive(Default)]
+pub struct ScoreBoard {
+  pub score_left: i32,
+  pub score_right: i32,
+}
+
+pub struct ScoreText {
+  pub p1_score: Entity,
+  pub p2_score: Entity,
 }
 
 pub struct Ball {
